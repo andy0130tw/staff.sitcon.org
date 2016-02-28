@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # DEVELOPERS: Django or server related settings which are mostly the same across sites should be kept here
-from __future__ import unicode_literals
+
 import os
 import datetime
 from django.conf import global_settings

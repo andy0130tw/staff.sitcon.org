@@ -63,7 +63,7 @@ def get(request, node):
             result['content'] = rev.text.text
             result['format'] = dict(BlobText.FORMAT_ENUMERATION).get(rev.text.format)
         elif node.is_folder():
-            result['content'] = [i.nid() for i in node.items()]
+            result['content'] = [i.nid() for i in list(node.items())]
 
     if 'revisions' in details:
         if node.is_file():

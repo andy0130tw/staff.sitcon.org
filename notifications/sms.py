@@ -1,6 +1,7 @@
 import json
-from urllib import urlencode
-from urllib2 import urlopen, URLError
+from urllib.parse import urlencode
+from urllib.request import urlopen
+from urllib.error import URLError
 from django.conf import settings
 
 SMS_API_URL = 'https://rest.nexmo.com/sms/json'
@@ -47,8 +48,8 @@ class SmsMessage(object):
             # Determine status
             for message in response['messages']:
                 if message['status'] != SMS_STATUS_SUCCESS:
-                    print 'SMS error status code %s' % message['status']
-                    return False
+                    print(('SMS error status code %s' % message['status']))
+                    return Falsevalue
 
         except URLError:
             # Request failed?

@@ -89,7 +89,7 @@ def contacts(request):
 
 @login_required
 def export(request, format=None):
-    if format and format not in formats.keys():
+    if format and format not in list(formats.keys()):
         from django.http import Http404
         raise Http404
 

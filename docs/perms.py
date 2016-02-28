@@ -1,4 +1,4 @@
-from models import Permission
+from .models import Permission
 
 PRIORITY = (
         Permission.VIEW,
@@ -6,7 +6,7 @@ PRIORITY = (
         Permission.EDIT,
     )
 PRIORITY_COUNT = len(PRIORITY)
-PRIORITY_MAPPING = dict(zip(PRIORITY, range(PRIORITY_COUNT)))
+PRIORITY_MAPPING = dict(list(zip(PRIORITY, list(range(PRIORITY_COUNT)))))
 
 def is_in_scope(user, perm):
     if perm.scope == Permission.INTERNAL:
